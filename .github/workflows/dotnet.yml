@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:  # Added manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
     - name: Publish
       run: dotnet publish --runtime win-x86 -c Release -o sapi_speech_server-bin
     - name: Upload build artifact
-      uses: actions/upload-artifact@v3.1.3
+      uses: actions/upload-artifact@v4
       with:
         name: SAPISpeechServer
         path: sapi_speech_server-bin/
